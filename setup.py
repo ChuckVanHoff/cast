@@ -27,9 +27,9 @@ the release level is 'alpha', 'beta', 'candidate', or 'final'. The components
 can also be accessed by name.
 '''
 version_info = sys.version_info
-if version_info['major'] <= 2:
+if version_info[0] < 3:
     print('python version must be greater than 2 \n Just quit now....')
-elif version_info['minor'] <= 6:
+elif version_info[1] < 7:
     print('python version must be 3.7 or greater. \n Just quit now...')
 
 

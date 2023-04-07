@@ -1,0 +1,4 @@
+The program contained here is intended to collect weather forecast data and
+store it in a mongodb database.
+
+Then....

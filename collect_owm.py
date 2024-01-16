@@ -15,7 +15,7 @@ def collect(limit=10):
     with open('latlon_list.txt', 'r') as lst:
         for row in lst:
             loc_list.append(row)
-    # Create the uri's for pd.json_normalize() to work with.
+    # Create the uri's for to be used for the requests.
     for coords in loc_list[:limit]:
         coord = json.loads(coords)
         lat = coord['lat']

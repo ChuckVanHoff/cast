@@ -1,4 +1,6 @@
 # Code related to the colleciton of data through the OpenWeatherMaps API
+# I think this is intended to be used by an import and then reference 
+# using a "[].collect()" command in code somewhere else.
 import json
 import requests
 import pandas as pd

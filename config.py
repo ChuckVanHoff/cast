@@ -1,5 +1,6 @@
 from urllib.parse import quote
 from pymongo import MongoClient
+from pymongo.errors import ConfigurationError
 
 # the local connection
 port = 27017
@@ -7,13 +8,16 @@ host = 'localhost'
 client = MongoClient(host, port)
 
 # the remote connection
-socket_path = 'cluster0.anhr9.mongodb.net/'
-user = 'chuckvanhoff'
-password = quote('Fe7ePrX!5L5Wh6W') # url encode the password for the mongodb uri
+socket_path = 'cluster0.h7tnfll.mongodb.net/'
+user = 'mastacow'
+password = quote('m!k3bIkE') # url encode the password for the mongodb uri
 uri = "mongodb+srv://%s:%s@%s" % (user, password, socket_path)
-### SOMETHING NEEDS TO BE HERE TO ENSURE THIS LINE DOES NOT STIMY THE
-### CONNECTION ATTEMPT...AS IT IS NOW, WITHOUT INTERNET ACCESS, IT ENDS HERE.
-remote_client = MongoClient(uri)
+# remote_client = MongoClient(uri)
+try: 
+    remote_client = MongoClient(uri)
+except ConfigurationError as e:
+    print(e)
+    print('no remote client')
 
 # database and collection names
 database = 'owm_test'
@@ -29,6 +33,3 @@ legit_instants = 'legit_inst'
 
 cron_limit = None
 test_limit = 1000
-
-
-print(f'imported config from {__file__}')

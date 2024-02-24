@@ -20,10 +20,12 @@ except ConfigurationError as e:
     print('no remote client')
 
 # database and collection names
-database = 'owm_test'
+database_owm = 'owm_test'
+database_wapi = 'wapi_test'
 # database = 'main_test'
 # database = 'owm_11022020'
-collection = 'owm_test'
+collection_owm = 'owm_test'
+collection_wapi = 'wapi_test'
 weathers_collection = 'weather_temp'
 weathers_archive = 'archive'
 observation_collection = 'obs_temp'

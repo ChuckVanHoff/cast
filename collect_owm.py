@@ -11,7 +11,7 @@ import keys
 def collect(limit=10):
     # Request from OWM and return a single or a list of responses as DataFrames
     #  First get the locations established
-    test_key = keys.test # The OWM api key that I use for testing
+    test_key = keys.owm_test # The OWM api key that I use for testing
     loc_list = [] # An empty list to hold the lat-lon locations.
     uri_list = [] # An empty list to hold the uri's to be requested.
     data_list = [] # An empty list to hold the requested data.
